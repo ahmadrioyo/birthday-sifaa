@@ -15,381 +15,290 @@
         body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #fce4ec 0%, #ffe8e2 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
             margin: 0;
-            padding: 40px 20px;
-            box-sizing: border-box;
+            padding: 0;
+            position: relative;
+            min-height: 100vh;
         }
 
-        .kartu-ucapan {
-            background-color: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            padding: 30px 40px;
-            max-width: 500px;
-            width: 100%;
-            text-align: center;
-            animation: pop-in 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
-            box-sizing: border-box;
-        }
-
-        @keyframes pop-in {
-            0% { transform: scale(0.5); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
-        h1 {
-            font-family: 'Great Vibes', cursive;
-            color: #d81b60;
-            font-size: 3.5em;
-            margin-bottom: 0;
-            font-weight: normal;
-        }
-
-        .gambar-ultah {
-            width: 100%;
-            max-width: 200px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            border: 5px solid #f8bbd0;
-        }
-
-        .pesan {
-            font-size: 1.1em;
-            color: #444;
-            line-height: 1.7;
-        }
-
-        .dari {
-            font-family: 'Great Vibes', cursive;
-            font-size: 2em;
-            color: #d81b60;
-            margin-top: 20px;
-            line-height: 1;
-        }
-
-        button {
-            background-color: #e91e63;
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1em;
-            font-weight: bold;
-            font-family: 'Poppins', sans-serif;
-            cursor: pointer;
-            margin-top: 20px;
-            transition: background-color 0.3s, transform 0.2s;
-            animation: pulse 1.5s infinite;
-        }
-
-        button:hover {
-            background-color: #d81b60;
-            transform: scale(1.05);
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.08); }
-            100% { transform: scale(1); }
-        }
-
-        /* === ⭐️ BARU: CERITA KITA ⭐️ === */
-        .cerita-kita {
-            background-color: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            padding: 30px 40px;
-            max-width: 800px; /* Boleh lebih lebar dari kartu utama */
-            width: 100%;
-            margin-top: 40px; /* Jarak dari kartu di atas */
-            box-sizing: border-box;
-            
-            /* Animasi */
-            opacity: 0;
-            animation: pop-in 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
-            animation-delay: 0.2s; /* Muncul setelah kartu utama */
-        }
-
-        .cerita-kita h2 {
-            font-family: 'Great Vibes', cursive;
-            color: #d81b60;
-            font-size: 2.8em;
-            font-weight: normal;
-            margin-top: 0;
-            margin-bottom: 25px;
-            text-align: center;
-        }
-
-        .konten-cerita {
-            text-align: left; /* Teks cerita lebih enak dibaca rata kiri */
-            color: #444;
-            line-height: 1.7;
-        }
-
-        .konten-cerita h3 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700; /* Bold */
-            color: #e91e63; /* Warna pink */
-            margin-top: 20px;
-            margin-bottom: 5px;
-        }
-
-        .konten-cerita p {
-            margin-top: 0;
-            font-size: 1.1em;
-        }
-
-
-        /* === GALERI FOTO === */
-        .galeri-kenangan {
-            max-width: 800px;
-            width: 100%;
-            margin: 40px auto 0 auto;
-            text-align: center;
-        }
-
-        .galeri-kenangan h2 {
-            font-family: 'Great Vibes', cursive;
-            color: #d81b60;
-            font-size: 2.8em;
-            font-weight: normal;
-            margin-bottom: 25px;
-            opacity: 0;
-            animation: pop-in 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
-            animation-delay: 0.4s; /* Penyesuaian delay */
-        }
-
-        .foto-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .foto-container img {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 15px;
-            border: 5px solid #ffffff;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            opacity: 0;
-            animation: pop-in 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
-            cursor: zoom-in; /* Kursor zoom */
-        }
-
-        /* Animasi foto muncul satu-satu (delay disesuaikan) */
-        .foto-container img:nth-child(1) { animation-delay: 0.8s; }
-        .foto-container img:nth-child(2) { animation-delay: 1.0s; }
-        .foto-container img:nth-child(3) { animation-delay: 1.2s; }
-        .foto-container img:nth-child(4) { animation-delay: 1.4s; }
-
-
-        .foto-container img:hover {
-            transform: scale(1.08) rotate(3deg);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        /* === MODAL (LIGHTBOX) === */
-        .modal-overlay {
-            display: none; /* Sembunyi */
+        body::after {
+            content: "";
             position: fixed;
-            z-index: 1000;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            justify-content: center;
-            align-items: center;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXV5eXl6enqPj4+Ojo5ra2uRkZHJycnt7e3Y2Nje3t7f39/m5ubf39/Q0NDn5+f5+fny8vL19fX29vb39/f5+fnMfolCAAAAchJREFUeNpiYAAHhoKwhxFgyEBmkaGkgoGgwMDIwMTAwOiooAAt5/k5eBYQGDAyMjCAgzEBLIbpkYFhCwMDAwMDwwMDIyMjA8MDI4MAguzAwMDAwMDIwMDAwMiLgAD0MwsDAwOBAAACcgA/cQAVlAAAAAElFTkSuQmCC');
+            animation: grain-animation 0.3s steps(4) infinite;
+            pointer-events: none;
+            opacity: 0.1;
+            z-index: 10000;
         }
 
-        .modal-image {
-            max-width: 85%;
-            max-height: 85%;
-            border: 5px solid #fff;
-            border-radius: 10px;
-            animation: zoom-in 0.3s ease;
-        }
-        
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 35px;
-            color: #fff;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-        
-        .modal-close:hover {
-            transform: scale(1.1) rotate(90deg);
+        @keyframes grain-animation {
+            0% { transform: translate(0, 0); } 10% { transform: translate(-5px, -10px); } 20% { transform: translate(15px, 5px); } 30% { transform: translate(-5px, -15px); } 40% { transform: translate(10px, 10px); } 50% { transform: translate(-15px, 0px); } 60% { transform: translate(10px, -10px); } 70% { transform: translate(0px, 15px); } 80% { transform: translate(-10px, -5px); } 90% { transform: translate(5px, 15px); } 100% { transform: translate(0, 0); }
         }
 
-        @keyframes zoom-in {
-            from { transform: scale(0.7); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        /* === TOMBOL MUSIK === */
-        .tombol-musik {
+        #gerbang-musik {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #e91e63;
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0, 0.2);
-            z-index: 999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
             display: flex;
             justify-content: center;
             align-items: center;
+            z-index: 9999;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
-        .tombol-musik:hover {
-            background-color: #d81b60;
+        .kotak-selamat-datang {
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            animation: pop-in 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
         }
 
+        .kotak-selamat-datang h2 {
+            font-family: 'Great Vibes', cursive;
+            color: #d81b60;
+            font-size: 2.8em;
+            font-weight: normal;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .kotak-selamat-datang p {
+            font-size: 1.1em;
+            color: #444;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        #konten-utama {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 10;
+        }
+
+        .kartu-ucapan {
+            background-color: #ffffff; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px 40px; max-width: 500px; width: 100%; text-align: center;
+            animation: pop-in 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards; box-sizing: border-box;
+        }
+        @keyframes pop-in { 0% { transform: scale(0.5); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+        
+        h1 { 
+            font-family: 'Great Vibes', cursive;
+            color: #d81b60; font-size: 3.5em; margin-bottom: 0; font-weight: normal; 
+        }
+        .gambar-ultah { width: 100%; max-width: 200px; border-radius: 50%; margin-bottom: 20px; border: 5px solid #f8bbd0; }
+        .pesan { font-size: 1.1em; color: #444; line-height: 1.7; }
+        .dari { 
+            font-family: 'Great Vibes', cursive;
+            font-size: 2em; color: #d81b60; margin-top: 20px; line-height: 1; 
+        }
+        button { background-color: #e91e63; color: white; padding: 12px 25px; border: none; border-radius: 50px; font-size: 1em; font-weight: bold; font-family: 'Poppins', sans-serif; cursor: pointer; margin-top: 20px; transition: background-color 0.3s, transform 0.2s; animation: pulse 1.5s infinite; }
+        button:hover { background-color: #d81b60; transform: scale(1.05); }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.08); } 100% { transform: scale(1); } }
+        
+        .cerita-kita { background-color: #ffffff; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); padding: 30px 40px; max-width: 800px; width: 100%; margin-top: 40px; box-sizing: border-box; opacity: 0; animation: pop-in 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards; animation-delay: 0.2s; }
+        .cerita-kita h2 { 
+            font-family: 'Great Vibes', cursive;
+            color: #d81b60; font-size: 2.8em; font-weight: normal; margin-top: 0; margin-bottom: 25px; text-align: center; 
+        }
+        .konten-cerita { text-align: left; color: #444; line-height: 1.7; }
+        .konten-cerita h3 { font-family: 'Poppins', sans-serif; font-weight: 700; color: #e91e63; margin-top: 20px; margin-bottom: 5px; }
+        .konten-cerita p { margin-top: 0; font-size: 1.1em; }
+        
+        .galeri-kenangan { max-width: 800px; width: 100%; margin: 40px auto 0 auto; text-align: center; }
+        .galeri-kenangan h2 { 
+            font-family: 'Great Vibes', cursive;
+            color: #d81b60; font-size: 2.8em; font-weight: normal; margin-bottom: 25px; opacity: 0; animation: pop-in 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards; animation-delay: 0.4s; 
+        }
+        .foto-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
+        .foto-container img { width: 200px; height: 200px; object-fit: cover; border-radius: 15px; border: 5px solid #ffffff; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; opacity: 0; animation: pop-in 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards; cursor: zoom-in; }
+        .foto-container img:nth-child(1) { animation-delay: 0.8s; } .foto-container img:nth-child(2) { animation-delay: 1.0s; } .foto-container img:nth-child(3) { animation-delay: 1.2s; } .foto-container img:nth-child(4) { animation-delay: 1.4s; }
+        .foto-container img:hover { transform: scale(1.08) rotate(3deg); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); }
+        
+        .modal-overlay { display: none; position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85); justify-content: center; align-items: center; }
+        .modal-image { max-width: 85%; max-height: 85%; border: 5px solid #fff; border-radius: 10px; animation: zoom-in 0.3s ease; }
+        .modal-close { position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; transition: transform 0.2s; }
+        .modal-close:hover { transform: scale(1.1) rotate(90deg); }
+        @keyframes zoom-in { from { transform: scale(0.7); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        
+        .tombol-musik { position: fixed; bottom: 20px; right: 20px; background-color: #e91e63; color: white; width: 50px; height: 50px; border-radius: 50%; border: none; font-size: 24px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0, 0.2); z-index: 999; display: flex; justify-content: center; align-items: center; }
+        .tombol-musik:hover { background-color: #d81b60; }
     </style>
 </head>
 <body>
 
-    <div class="kartu-ucapan">
-        <h1>Happy Birthday, [Panggilan Sayang]!</h1>
-        
-        <img src="https://imgur.com/4uvhcWl.jpg" alt="Cinta" class="gambar-ultah">
-        
-        <p class="pesan">
-            Selamat bertambah tua, partner in crime-ku! 😜<br>
-            Semoga hari ini jadi hari paling spesial. Terima kasih udah jadi alasanku
-            tersenyum setiap hari. Aku sayang banget sama kamu!
-        </p>
-        
-        <p class="dari">
-            Dengan segenap cinta,<br>
-            [Nama Anda]
-        </p>
-
-        <button id="tombol-kejutan">Klik untuk Kejutan! 💖</button>
-    </div>
-
-    <div class="cerita-kita">
-        <h2>Cerita Singkat Kita 🤍</h2>
-        <div class="konten-cerita">
-            
-            <h3>💖 Awal Mula</h3>
+    <div id="gerbang-musik">
+        <div class="kotak-selamat-datang">
+            <h2>Satu Langkah Lagi...</h2>
             <p>
-                Aku masih ingat banget hari pertama kita ketemu di [Tulis Lokasi/Acara di sini]. 
-                Waktu itu aku [Tulis 1-2 kalimat kesan pertamamu, misal: 'langsung salting' atau 'nggak nyangka bakal sedekat ini'].
+                Website ini dibuat spesial dengan musik.<br>
+                Untuk pengalaman terbaik, putar lagunya ya!
             </p>
-            
-            <h3>✨ Momen Favoritku</h3>
-            <p>
-                Dari semua kenangan kita, aku paling suka waktu kita [Tulis momen favorit, misal: ' kehujanan bareng di jalan' atau 'nonton film sampai ketiduran']. 
-                Rasanya simpel tapi berarti banget buat aku.
-            </p>
-            
-            <h3>💌 Kenapa Aku Sayang Kamu</h3>
-            <p>
-                [Tulis 1-2 hal spesifik tentang dia, misal: 'caramu tertawa', 'dukunganmu saat aku lagi down', atau 'hal-hal konyol yang cuma kita yang ngerti'].
-                Selamat ulang tahun sekali lagi, ya. Aku beruntung punya kamu.
-            </p>
-        </div>
-    </div>
-    
-    <div class="galeri-kenangan">
-        <h2>Kenangan Manis Kita...</h2>
-        <div class="foto-container">
-            
-            <img src="https://imgur.com/ptC2zZ9.jpg" alt="Kenangan 1" class="gallery-photo">
-            <img src="https://imgur.com/kYMB2K2.jpg" alt="Kenangan 2" class="gallery-photo">
-            <img src="https://imgur.com/7Z1b96Z.jpg" alt="Kenangan 3" class="gallery-photo">
-            <img src="https://imgur.com/Dvm2qio.jpg" alt="Kenangan 4" class="gallery-photo">
-            
+            <button id="tombol-mulai">Putar Musik & Lihat Kejutan 💖</button>
         </div>
     </div>
 
-    <div class="modal-overlay" id="modal-overlay">
-        <span class="modal-close" id="modal-close">&times;</span>
-        <img src="" alt="Gambar Diperbesar" class="modal-image" id="modal-image">
-    </div>
+    <main id="konten-utama">
 
-    <audio id="lagu-cinta" src="Rizky Febian & Adrian Khalif - Alamak (Official Lyric Video).mp3" loop></audio>
-    
-    <button class="tombol-musik" id="tombol-musik">&#9658;</button> 
+        <div class="kartu-ucapan">
+            <h1>Happy Birthday, Sipaaa sayangggg!</h1>
+            <img src="sifa6.jpg" alt="Cinta" class="gambar-ultah">
+            <p class="pesan">
+                Barakallah fii umrik, partner in crime menuju Jannah-ku! 😜<br>
+                Walau jauh di mata, kamu tetap orang yang paling sering aku sebut dalam doa.<br>
+                Semoga di umur yang baru ini makin banyak berkah, makin sholehah, dan makin disayang Allah. <br>
+                Doa tambahannya simpel: Semoga kamu sehat selalu, jadi calon makmum terbaik nanti, dan semoga Allah segera *ACC* proposal doa kita buat ketemu ya! Aamiin.<br>
+                Sabar ya di sana. Makasih udah jadi alasanku tersenyum (walau cuma lewat chat). Kangen banget! Aku sayang kamu sipaaa!.
+            </p>
+            <p class="dari">
+                Dengan segenap cinta,<br>
+                Banglaaa-mu
+            </p>
+            <button id="tombol-kejutan">Klik untuk Kejutan! 💖</button>
+        </div>
 
+        <div class="cerita-kita">
+            <h2>Cerita Singkat Kita 🤍</h2>
+            <div class="konten-cerita">
+                
+                <h3>💖 Awal Mula</h3>
+                <p>
+                    Aku masih ingat banget hari pertama kita ketemu di kelas mu, kelas 10 B. 
+                    Waktu itu aku notice ada orang baru nih, soalnya kan smansa banyak anak anak dari smp 1 sama smp 2.
+                    kemudian berlanjut kita sekelas, kita ngabisin waktu bersama sayang ada covid huhuuh. 
+                    waktu berlalu ketika kita makin sering ngopi bareng aku mulai naruh hati ke kamu tauuu.
+                    setelah kita main bareng terus, kamu selalu berbeda dipandanganku.
+                    ehh doaku sekarang terkabul hehehe.
+                </p>
+                
+                <h3>✨ Momen Favoritku</h3>
+                <p>
+                    Dari semua kenangan kita, aku paling suka waktu kita main ke pantai bareng, waktu itu kita udah seng seng ngan tau, aku ngode hehehe dari sebelum sebelumnya malah.
+                    kemudian ngopi bareng setelah kita punya status rasanya dreg deg. tapi feedback mu yang seperti ngasih pesen "udah atuh seng gausah jaim" dari situ aku mulai ga terlalu dreg deg, dan mulai berani.
+                    Rasanya simpel tapi berarti banget buat aku.
+                </p>
+                
+                <h3>💌 Kenapa Aku Sayang Kamu</h3>
+                <p>
+                    Jujur, kalau disuruh nulis semua alasannya, website ini bakal penuh.
+                    Tapi aku sayang banget hal-hal kecil tentang kamu, seperti caramu ketawa ngeselin atau caramu yang cengcengin aku dan kamu yang cegil cyentil.
+                    Aku sayang caramu ngirim pesan 'semangat ya' setiap hari yang selalu bisa bikin hariku jadi lebih baik.
+                    Aku senang ketika kamu bercerita tentang hari harimu dan apapun yang kamu rasakan dan apapun yang kamu alami dihidupmu.
+                    Aku suka ketika kamu melibatkan aku di dalam kegiatanmu yang membuat diriku merasa aku berharga.
+                    Selamat ulang tahun sekali lagi, ya. Aku beneran seberuntung itu punya kamu.
+                </p>
+            </div>
+        </div>
+        
+        <div class="galeri-kenangan">
+            <h2>Kenangan Manis Kita...</h2>
+            <div class="foto-container">
+                <img src="sifa1.jpg" alt="Kenangan 1" class="gallery-photo">
+                <img src="sifa2.jpg" alt="Kenangan 2" class="gallery-photo">
+                <img src="sifa3.jpg" alt="Kenangan 3" class="gallery-photo">
+                <img src="sifa4.jpg" alt="Kenangan 4" class="gallery-photo">
+            </div>
+        </div>
 
-    <script>
-        // --- Kode untuk Konfeti & Voucher ---
+        <div class="modal-overlay" id="modal-overlay">
+            <span class="modal-close" id="modal-close">&times;</span>
+            <img src="" alt="Gambar Diperbesar" class="modal-image" id="modal-image">
+        </div>
+
+        <audio id="lagu-cinta" src="Rizky Febian & Adrian Khalif - Alamak (Official Lyric Video).mp3" loop></audio>
+        <button class="tombol-musik" id="tombol-musik">&#9658;</button> 
+        
+    </main> <script>
+        const gerbangMusik = document.getElementById('gerbang-musik');
+        const tombolMulai = document.getElementById('tombol-mulai');
+        const kontenUtama = document.getElementById('konten-utama');
+        const lagu = document.getElementById('lagu-cinta');
+        const tombolMusik = document.getElementById('tombol-musik');
+        let sedangDiputar = false;
+
+        tombolMulai.addEventListener('click', function() {
+            gerbangMusik.style.display = 'none';
+            kontenUtama.style.display = 'flex';
+            lagu.play();
+            sedangDiputar = true;
+            tombolMusik.innerHTML = '&#10074;&#10074;'; // Ikon Pause
+        });
+        
         document.getElementById('tombol-kejutan').addEventListener('click', function() {
-            // Tembakkan konfeti HATI
+            
             confetti({
                 particleCount: 100,
                 spread: 70,
                 origin: { y: 0.6 },
-                shapes: ['heart'], // Bentuk hati
-                colors: ['#e91e63', '#d81b60', '#f8bbd0', '#ffffff'] // Warna pink
+                shapes: ['heart'],
+                colors: ['#e91e63', '#d81b60', '#f8bbd0', '#ffffff']
             });
 
-            // Munculkan "Voucher" Lucu
+            function downloadVoucher() {
+                var link = document.createElement('a');
+                link.href = 'voucher.png';
+                link.download = 'Voucher-Spesial-Untukmu.png';
+                link.style.display = 'none';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+
             setTimeout(function() {
-                alert("SELAMAT! 🥳 \n\nKamu memenangkan 'Voucher 1x Pelukan Hangat' + 'Makan Malam Romantis'. \n\nBisa diklaim sekarang juga!");
-            }, 500); 
+                var mauDownload = confirm(
+                    "SELAMAT, SAYANG! 🥳 \n\n" +
+                    "Kamu memenangkan:\n" +
+                    "💌 Voucher 1x 'Movie Night' Online (Film kamu yang pilih!)\n" +
+                    "💌 Voucher 1x Kencan Romantis Seharian (Saat kita ketemu nanti)\n\n" +
+                    "Ini adalah janjiku untukmu. \n\n" +
+                    "Simpan tiket vouchermu sekarang?"
+                );
+
+                if (mauDownload) {
+                    downloadVoucher();
+                }
+            }, 500);
         });
 
-
-        // --- Kode untuk Lightbox Galeri ---
         const modal = document.getElementById('modal-overlay');
         const modalImg = document.getElementById('modal-image');
         const closeBtn = document.getElementById('modal-close');
         const galleryPhotos = document.querySelectorAll('.gallery-photo');
-
-        // Buka modal saat foto diklik
         galleryPhotos.forEach(function(photo) {
             photo.addEventListener('click', function() {
                 modal.style.display = 'flex';
                 modalImg.src = this.src;
             });
         });
-
-        // Tutup modal saat 'X' diklik
-        closeBtn.addEventListener('click', function() {
-            modal.style.display = 'none';
-        });
-
-        // Tutup modal saat area luar gambar diklik
+        closeBtn.addEventListener('click', function() { modal.style.display = 'none'; });
         modal.addEventListener('click', function(event) {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
+            if (event.target === modal) { modal.style.display = 'none'; }
         });
-
-
-        // --- Kode untuk Tombol Musik ---
-        const tombolMusik = document.getElementById('tombol-musik');
-        const lagu = document.getElementById('lagu-cinta');
-        let sedangDiputar = false;
 
         tombolMusik.addEventListener('click', function() {
             if (sedangDiputar) {
                 lagu.pause();
-                tombolMusik.innerHTML = '&#9658;'; // Ikon Play
+                tombolMusik.innerHTML = '&#9658;';
                 sedangDiputar = false;
             } else {
                 lagu.play();
-                tombolMusik.innerHTML = '&#10074;&#10074;'; // Ikon Pause
+                tombolMusik.innerHTML = '&#10074;&#10074;';
                 sedangDiputar = true;
             }
         });
