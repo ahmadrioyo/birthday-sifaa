@@ -39,14 +39,67 @@
             0% { transform: translate(0, 0); } 10% { transform: translate(-5px, -10px); } 20% { transform: translate(15px, 5px); } 30% { transform: translate(-5px, -15px); } 40% { transform: translate(10px, 10px); } 50% { transform: translate(-15px, 0px); } 60% { transform: translate(10px, -10px); } 70% { transform: translate(0px, 15px); } 80% { transform: translate(-10px, -5px); } 90% { transform: translate(5px, 15px); } 100% { transform: translate(0, 0); }
         }
 
+        #layar-kunci {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            color: #d81b60;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99999;
+            background: linear-gradient(135deg, #fce4ec 0%, #ffe8e2 100%);
+        }
+
+        #layar-kunci h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5em;
+            font-weight: normal;
+        }
+
+        #layar-kunci p {
+            font-size: 1.2em;
+        }
+
+        #countdown {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .countdown-box {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0, 0.1);
+            min-width: 60px;
+        }
+
+        .countdown-box div {
+            font-size: 2em;
+            font-weight: 700;
+        }
+
+        .countdown-box span {
+            font-size: 0.8em;
+            text-transform: uppercase;
+        }
+
         #gerbang-musik {
+            display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.7);
-            display: flex;
+            display: none;
             justify-content: center;
             align-items: center;
             z-index: 9999;
@@ -66,7 +119,7 @@
         .kotak-selamat-datang h2 {
             font-family: 'Great Vibes', cursive;
             color: #d81b60;
-            font-size: 2.8em;
+            font-size: 2.8em; /* Typo / sudah dihapus */
             font-weight: normal;
             margin-top: 0;
             margin-bottom: 10px;
@@ -103,7 +156,32 @@
             color: #d81b60; font-size: 3.5em; margin-bottom: 0; font-weight: normal; 
         }
         .gambar-ultah { width: 100%; max-width: 200px; border-radius: 50%; margin-bottom: 20px; border: 5px solid #f8bbd0; }
-        .pesan { font-size: 1.1em; color: #444; line-height: 1.7; }
+        
+        /* === ⭐️ CSS DIPERBARUI ⭐️ === */
+        /* CSS untuk paragraf pesan, dipecah agar ada jarak */
+        .pesan { 
+            font-size: 1.1em; 
+            color: #444; 
+            line-height: 1.7;
+            margin-top: 20px; /* Jarak antar paragraf */
+            margin-bottom: 0;
+            text-align: left; /* Teks pesan lebih rapi rata kiri */
+        }
+        /* Paragraf pesan pertama tidak butuh margin atas */
+        .pesan:first-of-type {
+            margin-top: 0;
+        }
+
+        /* CSS untuk instruksi "baca pelan-pelan" */
+        .baca-pelan {
+            font-style: italic;
+            font-size: 0.9em;
+            color: #888;
+            margin-top: 25px;
+            margin-bottom: -10px;
+        }
+        /* ⭐️ AKHIR PEMBARUAN CSS ⭐️ === */
+
         .dari { 
             font-family: 'Great Vibes', cursive;
             font-size: 2em; color: #d81b60; margin-top: 20px; line-height: 1; 
@@ -139,16 +217,112 @@
         
         .tombol-musik { position: fixed; bottom: 20px; right: 20px; background-color: #e91e63; color: white; width: 50px; height: 50px; border-radius: 50%; border: none; font-size: 24px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0, 0.2); z-index: 999; display: flex; justify-content: center; align-items: center; }
         .tombol-musik:hover { background-color: #d81b60; }
+
+
+        /* Kode Responsif (Mobile Friendly) */
+        @media (max-width: 600px) {
+            body, #konten-utama {
+                padding: 20px 10px;
+            }
+
+            .kartu-ucapan, 
+            .cerita-kita, 
+            .kotak-selamat-datang {
+                padding: 25px 20px;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .kotak-selamat-datang h2,
+            .cerita-kita h2,
+            .galeri-kenangan h2 {
+                font-size: 2.1em;
+            }
+
+            .dari {
+                font-size: 1.8em;
+            }
+
+            /* ⭐️ CSS DIPERBARUI ⭐️ */
+            /* Sesuaikan ukuran font pesan & 'baca pelan' di HP */
+            .pesan, 
+            .konten-cerita p, 
+            .kotak-selamat-datang p {
+                font-size: 1em;
+                line-height: 1.6;
+            }
+            .baca-pelan {
+                font-size: 0.9em;
+                margin-top: 20px;
+                margin-bottom: -5px;
+            }
+            /* ⭐️ AKHIR PEMBARUAN CSS ⭐️ */
+
+            .foto-container img {
+                width: 130px;
+                height: 130px;
+            }
+
+            #layar-kunci h1 {
+                font-size: 2.8em;
+            }
+            #layar-kunci p {
+                font-size: 1em;
+            }
+            #countdown {
+                gap: 10px;
+            }
+            .countdown-box {
+                padding: 10px;
+                min-width: 50px;
+            }
+            .countdown-box div {
+                font-size: 1.6em;
+            }
+            .countdown-box span {
+                font-size: 0.7em;
+            }
+        }
+
     </style>
 </head>
 <body>
+
+    <div id="layar-kunci">
+        <h1>Sebentar Lagi...</h1>
+        <p>Ada kejutan spesial yang baru bisa dibuka pada:</p>
+        <p><strong>6 November 2025, pukul 00:00</strong></p>
+        
+        <div id="countdown">
+            <div class="countdown-box">
+                <div id="hari">00</div>
+                <span>Hari</span>
+            </div>
+            <div class="countdown-box">
+                <div id="jam">00</div>
+                <span>Jam</span>
+            </div>
+            <div class="countdown-box">
+                <div id="menit">00</div>
+                <span>Menit</span>
+            </div>
+            <div class="countdown-box">
+                <div id="detik">00</div>
+                <span>Detik</span>
+            </div>
+        </div>
+    </div>
 
     <div id="gerbang-musik">
         <div class="kotak-selamat-datang">
             <h2>Satu Langkah Lagi...</h2>
             <p>
                 Website ini dibuat spesial dengan musik.<br>
-                Untuk pengalaman terbaik, putar lagunya ya!
+                Untuk pengalaman terbaik, putar lagunya ya! <br>
+                Bacanya pelan pelan yaa. <br>
+                Sumpah aku malu seng hehehehe.
             </p>
             <button id="tombol-mulai">Putar Musik & Lihat Kejutan 💖</button>
         </div>
@@ -157,13 +331,22 @@
     <main id="konten-utama">
 
         <div class="kartu-ucapan">
-            <h1>Happy Birthday, Sipaaa sayangggg!</h1>
+            <h1>Happy Birthday,<br> My Beloved <br> <b>Nur Sifa Fauziah Anwar!</b>🤍</h1>
             <img src="sifa6.jpg" alt="Cinta" class="gambar-ultah">
+            
+            <p class="baca-pelan">(Psst... bacanya pelan-pelan yaa 🤍)</p>
+
             <p class="pesan">
                 Barakallah fii umrik, partner in crime menuju Jannah-ku! 😜<br>
-                Walau jauh di mata, kamu tetap orang yang paling sering aku sebut dalam doa.<br>
-                Semoga di umur yang baru ini makin banyak berkah, makin sholehah, dan makin disayang Allah. <br>
-                Doa tambahannya simpel: Semoga kamu sehat selalu, jadi calon makmum terbaik nanti, dan semoga Allah segera *ACC* proposal doa kita buat ketemu ya! Aamiin.<br>
+                Walau jauh di mata, kamu tetap orang yang paling sering aku sebut dalam doa.
+            </p>
+            <p class="pesan">
+                Semoga di umur yang baru ini makin banyak berkah, makin sholehah, dan makin disayang Allah. 
+                Doa tambahannya simpel: Semoga kamu sehat selalu, jadi calon makmum terbaik ku nanti, dan semoga Allah segera *ACC* proposal doa kita buat ketemu ya! Aamiin.
+            </p>
+             <p class="pesan">
+                Oiya, semoga segala urusannya kamu dipermudah dan dilancarkan ya. Apalagi kuliahnya, aku doain banget kamu cepat semhas!            </p>
+            <p class="pesan">
                 Sabar ya di sana. Makasih udah jadi alasanku tersenyum (walau cuma lewat chat). Kangen banget! Aku sayang kamu sipaaa!.
             </p>
             <p class="dari">
@@ -226,8 +409,47 @@
         <audio id="lagu-cinta" src="Rizky Febian & Adrian Khalif - Alamak (Official Lyric Video).mp3" loop></audio>
         <button class="tombol-musik" id="tombol-musik">&#9658;</button> 
         
-    </main> <script>
+    </main> 
+    
+    <script>
+        // === FUNGSI COUNTDOWN ===
+        const tanggalTarget = new Date('2025-11-06T00:00:00');
+        const layarKunci = document.getElementById('layar-kunci');
         const gerbangMusik = document.getElementById('gerbang-musik');
+        
+        const hariEl = document.getElementById('hari');
+        const jamEl = document.getElementById('jam');
+        const menitEl = document.getElementById('menit');
+        const detikEl = document.getElementById('detik');
+
+        function jalankanTimer() {
+            const sekarang = new Date();
+            // --- Untuk Testing, hapus tanda '//' di baris bawah ini ---
+            // const tanggalTarget = new Date('2020-01-01T00:00:00'); 
+            
+            const selisih = tanggalTarget - sekarang;
+
+            if (selisih <= 0) {
+                layarKunci.style.display = 'none';
+                gerbangMusik.style.display = 'flex';
+                clearInterval(intervalTimer);
+            } else {
+                const hari = Math.floor(selisih / (1000 * 60 * 60 * 24));
+                const jam = Math.floor((selisih % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const menit = Math.floor((selisih % (1000 * 60 * 60)) / (1000 * 60));
+                const detik = Math.floor((selisih % (1000 * 60)) / 1000);
+
+                hariEl.innerHTML = String(hari).padStart(2, '0');
+                jamEl.innerHTML = String(jam).padStart(2, '0');
+                menitEl.innerHTML = String(menit).padStart(2, '0');
+                detikEl.innerHTML = String(detik).padStart(2, '0');
+            }
+        }
+        
+        const intervalTimer = setInterval(jalankanTimer, 1000);
+        jalankanTimer();
+
+        // === FUNGSI GERBANG MUSIK ===
         const tombolMulai = document.getElementById('tombol-mulai');
         const kontenUtama = document.getElementById('konten-utama');
         const lagu = document.getElementById('lagu-cinta');
@@ -242,6 +464,7 @@
             tombolMusik.innerHTML = '&#10074;&#10074;';
         });
         
+        // === FUNGSI VOUCHER ===
         document.getElementById('tombol-kejutan').addEventListener('click', function() {
             
             confetti({
@@ -254,7 +477,7 @@
 
             function downloadVoucher() {
                 var link = document.createElement('a');
-                link.href = 'voucher.png';
+                link.href = 'voucher.png'; // Pastikan Anda punya file voucher.png
                 link.download = 'Voucher-Spesial-Untukmu.png';
                 link.style.display = 'none';
                 document.body.appendChild(link);
@@ -278,6 +501,7 @@
             }, 500);
         });
 
+        // === FUNGSI LIGHTBOX ===
         const modal = document.getElementById('modal-overlay');
         const modalImg = document.getElementById('modal-image');
         const closeBtn = document.getElementById('modal-close');
@@ -293,6 +517,7 @@
             if (event.target === modal) { modal.style.display = 'none'; }
         });
 
+        // === FUNGSI TOMBOL MUSIK PAUSE/PLAY ===
         tombolMusik.addEventListener('click', function() {
             if (sedangDiputar) {
                 lagu.pause();
